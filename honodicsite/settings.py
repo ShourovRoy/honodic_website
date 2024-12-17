@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7+k5ag)lk$l%ak6y#=y!u5ck82voj!h*_7kb^4cy-xa12zf8h8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['honodic.com', 'www.honodic.com']
+ALLOWED_HOSTS = ['honodic.com', 'www.honodic.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -131,14 +131,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = '/home/daaqzinc/public_html/static/'
+# STATIC_ROOT = BASE_DIR / 'static/'
 
-# STATICFILES_DIRS = [
-#     "/home/daaqzinc/public_html/static/",
-# ]
-
+STATICFILES_DIRS = [
+    "/home/daaqzinc/public_html/static_dir/",
+]
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]
+
 
 # MEDIA files
 MEDIA_URL = 'media/'
