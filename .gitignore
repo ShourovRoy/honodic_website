@@ -1,0 +1,86 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django-specific files
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+
+.honodicapplication
+migrations
+# Local Django settings (e.g., for development)
+local_settings.py
+
+# Environment variables and secrets
+.env
+*.env
+
+# Migrations (optional - commit these in production-ready projects)
+# Uncomment this if you don't want migrations tracked
+# */migrations/*
+
+# Media and static files
+/media/
+/static/
+/staticfiles/
+
+# Node.js files (if using frontend assets)
+node_modules/
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.iml
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Build directories and tools
+build/
+dist/
+pip-wheel-metadata/
+*.egg-info/
+MANIFEST
+
+# Coverage and testing
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+*.cover
+*.py,cover
+.cache
+
+# Linting and formatting tools
+*.pylint.d/
+*.mypy_cache/
+flake8.log
+pyrightconfig.json
+
+# Docker
+docker-compose.override.yml
+*.dockerfile
+.dockerignore
+
+# macOS files
+.DS_Store
+
+# Windows thumbnails
+Thumbs.db
+
+# Logs and debugging files
+*.log
+debug.log
+
+# Custom
