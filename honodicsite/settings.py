@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
     "/home/daaqzinc/public_html/static_dir/",
 ]
 # STATICFILES_DIRS = [
-#     BASE_DIR / "static",
+#     BASE_DIR / "static_dir",
 # ]
 
 
