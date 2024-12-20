@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'contact.processor.contact_details_view',
             ],
         },
     },
@@ -130,14 +131,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/home/daaqzinc/public_html/static/'
-# STATIC_ROOT = BASE_DIR / 'static/'
 
+STATIC_ROOT = '/home/daaqzinc/public_html/static/'
 STATICFILES_DIRS = [
     "/home/daaqzinc/public_html/static_dir/",
 ]
+
+# STATIC_ROOT = BASE_DIR / 'static/'
 # STATICFILES_DIRS = [
-#     BASE_DIR / "static_dir",
+#     BASE_DIR / "static_dir/",
 # ]
 
 

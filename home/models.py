@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class HomeHeroContent(models.Model):
+class HomeSliderContent(models.Model):
     title = models.CharField(max_length=100, default="", null=True)
     desc = models.TextField(max_length=500, default="", null=True)
     button_name = models.CharField(max_length=20, default="Click Me", null=True)
@@ -14,7 +14,7 @@ class HomeHeroContent(models.Model):
 
 
 # home about content details
-class HomeHeroAboutContentModel(models.Model):
+class HomeAboutContent(models.Model):
     
     title = models.CharField(max_length=100, default="", null=True)
     desc = models.TextField(max_length=300, default="", null=True)
@@ -28,7 +28,7 @@ class HomeHeroAboutContentModel(models.Model):
         return self.title
 
 
-class HomeUniqueFeatures(models.Model):
+class HomeUniqueFeature(models.Model):
     title = models.CharField(max_length=80)
     sub_title = models.CharField(max_length=100)
     image = models.ImageField(upload_to="home/unique_features/", blank=True, null=True)
@@ -37,7 +37,12 @@ class HomeUniqueFeatures(models.Model):
         return self.title
 
 
+class HomeFeaturedProductDetail(models.Model):
+    title = models.TextField(max_length=400, null=False, blank=False)
+    desc = models.TextField(max_length=900, null=True, blank=True)
 
+    def __str__(self):
+        return self.title
 
 
 

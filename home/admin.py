@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import HomeHeroContent, HomeHeroAboutContentModel, HomeUniqueFeatures
+from .models import HomeUniqueFeature, HomeSliderContent, HomeAboutContent, HomeFeaturedProductDetail 
 
 # Register your models here.
 
-admin.site.register(HomeHeroContent)
-admin.site.register(HomeHeroAboutContentModel)
-admin.site.register(HomeUniqueFeatures)
+admin.site.register(HomeSliderContent)
+admin.site.register(HomeAboutContent)
+admin.site.register(HomeUniqueFeature)
+admin.site.register(HomeFeaturedProductDetail)

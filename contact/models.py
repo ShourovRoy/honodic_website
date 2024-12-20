@@ -13,3 +13,16 @@ class ContactMessage(models.Model):
     def __str__(self):
         return self.subject
 
+
+
+class ContactDetail(models.Model):
+    phone_number = models.CharField(max_length=15, null=False, blank=False)
+    contact_email = models.EmailField(max_length=100, null=False, blank=False)
+    address = models.TextField(max_length=500, blank=False, null=False)
+    facebook_link = models.URLField(max_length=800, blank=True, null=True)
+    twitter_link = models.URLField(max_length=800, blank=True, null=True)
+    instagram_link = models.URLField(max_length=800, blank=True, null=True)
+    linkdin_link = models.URLField(max_length=800, blank=True, null=True)
+
+    def __str__(self):
+        return self.phone_number

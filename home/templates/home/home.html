@@ -16,7 +16,7 @@
 {% block content %}
 
     {% include 'navbars/default_navbar.html' %}
-   
+    {% if sliders %}
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 600px;">
       <div class="carousel-indicators">
           {% for slide in sliders %}
@@ -43,15 +43,25 @@
                       <p class="text-center text-white opacity-75 mx-auto">{{slider.desc}}</p>
   
                       {% comment %} button {% endcomment %}
-                      <button type="button" class="btn btn-success">
+                      <a href="" type="button" class="btn btn-success">
                         {{slider.button_name}}
-                      </button>
+                      </a>
                     </div>
                   </div>
               </div>
           {% endfor %}
       </div>
-  </div>
+    </div>
+    
+    
+    {% else %}
+      <div class="bg-success-subtle justify-content-center align-items-center align-content-center" style="height: 600px;">
+        <div class="container text-center mx-auto">
+          <h1>Please Add Sliders from admin panel</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur eum perspiciatis neque exercitationem explicabo molestiae, quos cumque impedit pariatur animi ut veniam delectus sunt earum repellat incidunt voluptatibus dolores nobis.</p>
+        </div>
+      </div>
+    {% endif %}
 
 
   <div class="py-5">
@@ -74,7 +84,7 @@
             {{about_information.desc}}
           </p>
           <div class="text-lg-start text-center">
-            <button class="btn btn-outline-success btn-lg" type="button">{{about_information.button_name}}</button>
+            <a href="{% url 'about:about_us_view' %}" class="btn btn-outline-success btn-lg" type="button">{{about_information.button_name}}</a>
           </div>
         </div>
       </div>
@@ -87,16 +97,22 @@
     <div class="container mx-auto">
       <h2 class="text-center py-3">WHAT MAKES US UNIQUE?</h2>
 
-      <div class="row">
-        {% for feature in unique_features %}
-          <div class="col-12 col-lg-3">
-            <div class="mx-auto text-center feature__card" style="">
-              <img class="justify-content-center py-1" src="{{feature.image.url}}" alt="{{feature.title}}" height="70px" width="70px" >
-              <p class="fs-6 text-wrap py-2" style="width:88%; margin: auto">{{feature.sub_title}}</p>
-            </div> 
-          </div>
-        {% endfor %}
-      </div>
+      {% if unique_features %}
+        <div class="row">
+          {% for feature in unique_features %}
+            <div class="col-12 col-lg-3">
+              <div class="mx-auto text-center feature__card" style="">
+                <img class="justify-content-center py-1" src="{{feature.image.url}}" alt="{{feature.title}}" height="70px" width="70px" >
+                <p class="fs-6 text-wrap py-2" style="width:88%; margin: auto">{{feature.sub_title}}</p>
+              </div> 
+            </div>
+          {% endfor %}
+        </div>
+      
+      {% else %}
+        <p>There are no unique features available!</p>
+      {% endif %}
+
 
     </div>
   </div> 
@@ -108,29 +124,46 @@
         {% comment %} left {% endcomment %}
         <div class="col-lg-4 col-12">
           <h2>
-            Featured Organic Products
+
+            {% if featured_product_details.title %}
+             {{featured_product_details.title}}
+            {% else %}
+              Featured Organic Products
+            {% endif %}
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quos inventore ab fugiat aliquid, sapiente culpa minus facere, possimus dolores eligendi beatae reprehenderit magnam maxime doloribus voluptate perferendis quaerat a!
+            {% if featured_product_details.desc %}
+             {{featured_product_details.desc}}
+            {% else %}
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quos inventore ab fugiat aliquid, sapiente culpa minus facere, possimus dolores eligendi beatae reprehenderit magnam maxime doloribus voluptate perferendis quaerat a!
+            {% endif %}
           </p>
           <a href="{% url 'products:products_view' %}" class="btn btn-success btn-lg" type="button">View Products</a>
         </div> 
         {% comment %} left {% endcomment %}
         <div class="col-lg-8 col-12 mt-3 mt-lg-0">
           <div class="row justify-content-lg-evenly gap-2">
-            {% for product in  featured_product_list %}
-              <div class="col-lg-3 col-12">
-                <div class="card shadow-sm featured_product_card" >
-                  <img width="400px" height="400px" src="{{product.featured_image.url}}" class="card-img-top" alt="Delicious Food">
-                  <div class="card-body text-center">
-                      <h5 class="card-title">{{product.title}}</h5>
-                      <p class="card-text text-muted">{{product.desc|slice:":60"}}..</p>
-                      <button class="btn btn-outline-success btn-md w-100">View now</button>
+            {% if  featured_product_list %}
+              {% for product in  featured_product_list %}
+                <div class="col-lg-3 col-12">
+                  <div class="card shadow-sm featured_product_card" >
+                    <img width="400px" height="400px" src="{{product.featured_image.url}}" class="card-img-top" alt="Delicious Food">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <p class="card-text text-muted">{{product.desc|slice:":60"}}..</p>
+                        <a href="{% url 'products:product_details_view' product.id %}" class="btn btn-outline-success btn-md w-100">View now</a>
+                    </div>
                   </div>
-                </div>
 
-              </div>
-            {% endfor %}
+                </div>
+              {% endfor %}
+
+            {% else %}
+                There is no featured products!
+            {% endif %}
+
+
+
           </div>
         </div> 
       </div>

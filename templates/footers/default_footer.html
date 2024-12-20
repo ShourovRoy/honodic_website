@@ -26,19 +26,19 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
                 <h5 class="text-uppercase fw-bold" style="color: #6CE891;">Contact</h5>
                 <ul class="list-unstyled">
-                    <li><i class="bi bi-geo-alt"></i> 123 Organic Street, Nature City</li>
-                    <li><i class="bi bi-envelope"></i> support@honodic.com</li>
-                    <li><i class="bi bi-phone"></i> +1 234 567 890</li>
+                    <li><i class="bi bi-geo-alt"></i> {{contact_details.address}}</li>
+                    <li><i class="bi bi-envelope"></i> {{contact_details.contact_email}}</li>
+                    <li><i class="bi bi-phone"></i> {{contact_details.phone_number}}</li>
                 </ul>
             </div>
 
             <!-- Social Media -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
                 <h5 class="text-uppercase fw-bold" style="color: #6CE891;">Follow Us</h5>
-                <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                <a target="_blank" href="{{contact_details.facebook_link}}" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                <a target="_blank" href="{{contact_details.twitter_link}}" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                <a target="_blank" href="{{contact_details.instagram_link}}" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                <a target="_blank" href="{{contact_details.linkdin_link}}" class="text-light"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
     </div>
