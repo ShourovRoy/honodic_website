@@ -85,14 +85,25 @@ WSGI_APPLICATION = 'honodicsite.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         "NAME": "daaqzinc_honodic_db",
+#         "USER": "daaqzinc_shourovroy",
+#         "PASSWORD": "ShourovRoy&007",
+#         "HOST": "127.0.0.1",
+#         "PORT": "3306",
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        "NAME": "daaqzinc_honodic_db",
-        "USER": "daaqzinc_shourovroy",
-        "PASSWORD": "ShourovRoy&007",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'honodic_db',
+        'USER': 'honodicuser',
+        'PASSWORD': 'honodic',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -132,12 +143,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = '/home/daaqzinc/public_html/static/'
-STATICFILES_DIRS = [
-    "/home/daaqzinc/public_html/static_dir/",
-]
+# STATIC_ROOT = '/home/daaqzinc/public_html/static/'
+# STATICFILES_DIRS = [
+#     "/home/daaqzinc/public_html/static_dir/",
+# ]
 
-# STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static/",
 # ]
@@ -146,8 +157,8 @@ STATICFILES_DIRS = [
 # MEDIA files
 MEDIA_URL = 'media/'
 
-MEDIA_ROOT = '/home/daaqzinc/public_html/media/'
-# MEDIA_ROOT = BASE_DIR / 'media/'
+# MEDIA_ROOT = '/home/daaqzinc/public_html/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

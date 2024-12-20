@@ -85,3 +85,5 @@ debug.log
 
 # Custom
 static_dir
+.pem
+honodic_security_key.pem
