@@ -79,13 +79,15 @@
         {% comment %} left {% endcomment %}
         <div class="col-lg-6 col-sm-12">
           {% comment %}information  {% endcomment %}
-          <h2 class="text-lg-start text-center pt-lg-0 pt-3">{{about_information.title}}</h2>
-          <p class="text-lg-start text-center">
-            {{about_information.desc}}
-          </p>
-          <div class="text-lg-start text-center">
-            <a href="{% url 'about:about_us_view' %}" class="btn btn-outline-success btn-lg" type="button">{{about_information.button_name}}</a>
-          </div>
+          {% if about_information %}
+            <h2 class="text-lg-start text-center pt-lg-0 pt-3">{{about_information.title}}</h2>
+            <p class="text-lg-start text-center">
+              {{about_information.desc}}
+            </p>
+            <div class="text-lg-start text-center">
+              <a href="{% url 'about:about_us_view' %}" class="btn btn-outline-success btn-lg" type="button">{{about_information.button_name}}</a>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

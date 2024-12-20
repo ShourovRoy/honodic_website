@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'honodicsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        "NAME": "daaqzinc_honodic_02",
-        "USER": "daaqzinc_shourovtest",
-        "PASSWORD": "shourovtest",
+        "NAME": "daaqzinc_honodic_db",
+        "USER": "daaqzinc_shourovroy",
+        "PASSWORD": "ShourovRoy&007",
         "HOST": "127.0.0.1",
         "PORT": "3306",
     }
@@ -139,7 +139,7 @@ STATICFILES_DIRS = [
 
 # STATIC_ROOT = BASE_DIR / 'static/'
 # STATICFILES_DIRS = [
-#     BASE_DIR / "static_dir/",
+#     BASE_DIR / "static/",
 # ]
 
 
